@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from.forms import CreateUserForm, UserUpdateForm,ProfileUpdateForm
+from django.contrib import messages
 
 # Create your views here.
 def register(request):
@@ -7,6 +8,8 @@ def register(request):
         form = CreateUserForm(request.POST)
         if  form.is_valid():
             form.save()
+            user_name = form.cleaned_data.get('username')
+            messages.success(request, f'Account has been created {user_name}. You can now login')
             return redirect('user_login')
     else:
         form = CreateUserForm()

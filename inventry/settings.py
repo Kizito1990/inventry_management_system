@@ -137,3 +137,11 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = 'dashboard_index'
+
+#add email settings
+EMAIL_BACKEND = ''
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "Add your email here"
+EMAIL_HOST_PASSWORD = "Add your google app password"
